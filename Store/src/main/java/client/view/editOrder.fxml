@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="550.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controller.EditOrderController">
+    <children>
+        <Label layoutX="379.0" layoutY="14.0" prefHeight="32.0" prefWidth="242.0" text="Редактирование заказа" AnchorPane.leftAnchor="379.0" AnchorPane.rightAnchor="379.0">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
+        <Label layoutX="14.0" layoutY="71.0" text="ФИО клиента" />
+        <Label layoutX="360.0" layoutY="71.0" text="Дата заказа" />
+        <Label layoutX="14.0" layoutY="124.0" text="ФИО сотрудника" />
+        <Label layoutX="360.0" layoutY="123.0" text="Стоимость" />
+        <TextField fx:id="orderClientNameField" layoutX="141.0" layoutY="67.0" />
+        <DatePicker fx:id="orderDateField" layoutX="454.0" layoutY="68.0" prefHeight="31.0" prefWidth="149.0" />
+        <ChoiceBox fx:id="orderUserNameChoiceBox" layoutX="141.0" layoutY="118.0" prefWidth="150.0" />
+        <TextField fx:id="orderCostField" editable="false" layoutX="454.0" layoutY="119.0" />
+        <TextField fx:id="productListQuantityField" layoutX="339.0" layoutY="506.0" prefHeight="31.0" prefWidth="106.0" promptText="Количество" />
+        <Button fx:id="addToList" layoutX="466.0" layoutY="509.0" mnemonicParsing="false" onAction="#addToListAction" text="Добавить в список" />
+        <Button fx:id="deleteFromList" layoutX="738.0" layoutY="509.0" mnemonicParsing="false" onAction="#deleteFromListAction" text="Удалить из списка" />
+        <Button fx:id="editOrderButton" layoutX="738.0" layoutY="83.0" mnemonicParsing="false" onAction="#editOrderButtonAction" prefHeight="51.0" prefWidth="178.0" text="Редактировать заказ" />
+        <Button fx:id="returnButton" layoutX="14.0" layoutY="509.0" mnemonicParsing="false" onAction="#returnButtonAction" text="Назад" />
+        <Label layoutX="384.0" layoutY="177.0" prefHeight="32.0" prefWidth="232.0" text="Выбор списка товаров" AnchorPane.leftAnchor="384.0" AnchorPane.rightAnchor="384.0">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
+        <Label layoutX="697.0" layoutY="221.0" text="Список выбранных товаров">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="226.0" layoutY="221.0" prefHeight="27.0" prefWidth="163.0" text="Доступные товары">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TableView fx:id="productTable" layoutX="6.0" layoutY="256.0" onMouseClicked="#productTableAction" prefHeight="241.0" prefWidth="620.0" AnchorPane.leftAnchor="0.0">
+            <columns>
+                <TableColumn fx:id="productIDColumn" prefWidth="68.59999084472656" text="Код товара" />
+                <TableColumn fx:id="productNameColumn" prefWidth="88.79998779296875" text="Название" />
+                <TableColumn fx:id="productProducerColumn" prefWidth="111.60000610351562" text="Производитель" />
+                <TableColumn fx:id="productCharacteristicColumn" prefWidth="121.39999389648438" text="Характеристики" />
+                <TableColumn fx:id="productQuantityColumn" minWidth="0.0" prefWidth="77.0" text="Количество" />
+                <TableColumn fx:id="productDateColumn" minWidth="0.0" prefWidth="100.5999755859375" text="Дата выпуска" />
+                <TableColumn fx:id="productPriceColumn" prefWidth="58.0" text="Цена" />
+            </columns>
+        </TableView>
+        <TableView fx:id="productListTable" layoutX="626.0" layoutY="256.0" onMouseClicked="#productListTableAction" prefHeight="241.0" prefWidth="374.0" AnchorPane.rightAnchor="0.0">
+            <columns>
+                <TableColumn fx:id="productListProductIDColumn" prefWidth="153.0" text="Код товара" />
+                <TableColumn fx:id="productListOrderIDColumn" prefWidth="121.0" text="Номер заказа" />
+                <TableColumn fx:id="productListQuantityColumn" prefWidth="99.0" text="Количество" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

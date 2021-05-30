@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="170.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controller.DeleteOrderController">
+    <children>
+        <Label layoutX="113.0" layoutY="14.0" prefHeight="32.0" prefWidth="173.0" text="Удаление заказа">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
+        <Label layoutX="54.0" layoutY="67.0" text="Вы дейтсвительно хотите удалить выбранный заказ?" />
+        <Button fx:id="yesButton" layoutX="120.0" layoutY="110.0" mnemonicParsing="false" onAction="#yesButtonAction" prefHeight="30.0" prefWidth="60.0" text="Да" />
+        <Button fx:id="noButton" layoutX="220.0" layoutY="110.0" mnemonicParsing="false" onAction="#noButtonAction" prefHeight="30.0" prefWidth="60.0" text="Нет" />
+    </children>
+</AnchorPane>
