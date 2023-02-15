@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="course-project-electrical-store" />
         <module name="Store" />
+        <module name="electrical-store-course-project" />
       </profile>
     </annotationProcessing>
   </component>
