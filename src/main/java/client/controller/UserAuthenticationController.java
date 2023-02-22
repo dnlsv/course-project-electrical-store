@@ -47,7 +47,7 @@ public class UserAuthenticationController {
                 Stage st = (Stage)authenticateButton.getScene().getWindow();
                 st.close();
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/employeeMenu.fxml"));
+                loader.setLocation(getClass().getClassLoader().getResource("view/employeeMenu.fxml"));
 
                 try {
                     loader.load();
@@ -67,7 +67,7 @@ public class UserAuthenticationController {
                 Stage st = (Stage)authenticateButton.getScene().getWindow();
                 st.close();
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/adminMenu.fxml"));
+                loader.setLocation(getClass().getClassLoader().getResource("view/adminMenu.fxml"));
 
                 try {
                     loader.load();

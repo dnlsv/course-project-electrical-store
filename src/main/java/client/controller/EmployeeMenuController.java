@@ -151,7 +151,7 @@ public class EmployeeMenuController {
         if(order != null) {
             viewProductListButton.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/viewProductList.fxml"));
+            loader.setLocation(getClass().getClassLoader().getResource("view/viewProductList.fxml"));
 
             try {
                 loader.load();
@@ -183,7 +183,7 @@ public class EmployeeMenuController {
         Stage st = (Stage)logOfButton.getScene().getWindow();
         st.close();
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/userAuthentication.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource("view/userAuthentication.fxml"));
 
         try {
             loader.load();
@@ -203,7 +203,7 @@ public class EmployeeMenuController {
         if(order != null) {
             deleteOrderButton.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/deleteOrder.fxml"));
+            loader.setLocation(getClass().getClassLoader().getResource("view/deleteOrder.fxml"));
 
             try {
                 loader.load();
@@ -232,7 +232,7 @@ public class EmployeeMenuController {
         if(order != null) {
             editOrderButton.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/editOrder.fxml"));
+            loader.setLocation(getClass().getClassLoader().getResource("view/editOrder.fxml"));
 
             try {
                 loader.load();
@@ -260,7 +260,7 @@ public class EmployeeMenuController {
     void addOrderButtonAction(ActionEvent event) {
         addOrderButton.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/addOrder.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource("view/addOrder.fxml"));
 
         try {
             loader.load();
@@ -338,7 +338,7 @@ public class EmployeeMenuController {
     void searchProductButtonAction(ActionEvent event){
         Stage st = (Stage) searchProductButton.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/searchProduct.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource("view/searchProduct.fxml"));
 
         try {
             loader.load();

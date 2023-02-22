@@ -11,7 +11,7 @@ public class ClientMain extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/userAuthentication.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("view/userAuthentication.fxml"));
         primaryStage.setTitle("Магазин электротоваров");
         primaryStage.setScene(new Scene(root, 450, 350));
         primaryStage.show();

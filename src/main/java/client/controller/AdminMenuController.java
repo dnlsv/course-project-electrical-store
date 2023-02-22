@@ -172,7 +172,7 @@ public class AdminMenuController {
     void addProductButtonAction(ActionEvent event) {
         addProductButton.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/addProduct.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource("view/addProduct.fxml"));
 
         try {
             loader.load();
@@ -194,7 +194,7 @@ public class AdminMenuController {
         if(product != null) {
             editProductButton.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/editProduct.fxml"));
+            loader.setLocation(getClass().getClassLoader().getResource("view/editProduct.fxml"));
 
             try {
                 loader.load();
@@ -223,7 +223,7 @@ public class AdminMenuController {
         if(product != null) {
             deleteProductButton.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/deleteProduct.fxml"));
+            loader.setLocation(getClass().getClassLoader().getResource("view/deleteProduct.fxml"));
 
             try {
                 loader.load();
@@ -287,7 +287,7 @@ public class AdminMenuController {
         if(order != null) {
             viewProductListButton.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/viewProductList.fxml"));
+            loader.setLocation(getClass().getClassLoader().getResource("view/viewProductList.fxml"));
 
             try {
                 loader.load();
@@ -313,7 +313,7 @@ public class AdminMenuController {
         if(order != null) {
             deleteOrderButton.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/deleteOrder.fxml"));
+            loader.setLocation(getClass().getClassLoader().getResource("view/deleteOrder.fxml"));
 
             try {
                 loader.load();
@@ -342,7 +342,7 @@ public class AdminMenuController {
         if(order != null) {
             editOrderButton.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/editOrder.fxml"));
+            loader.setLocation(getClass().getClassLoader().getResource("view/editOrder.fxml"));
 
             try {
                 loader.load();
@@ -370,7 +370,7 @@ public class AdminMenuController {
     void addOrderButtonAction(ActionEvent event) {
         addOrderButton.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/addOrder.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource("view/addOrder.fxml"));
 
         try {
             loader.load();
@@ -394,7 +394,7 @@ public class AdminMenuController {
     void addSupplyButtonAction(ActionEvent event) {
         addSupplyButton.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/addSupply.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource("view/addSupply.fxml"));
 
         try {
             loader.load();
@@ -416,7 +416,7 @@ public class AdminMenuController {
         if(supply != null) {
             editSupplyButton.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/editSupply.fxml"));
+            loader.setLocation(getClass().getClassLoader().getResource("view/editSupply.fxml"));
 
             try {
                 loader.load();
@@ -445,7 +445,7 @@ public class AdminMenuController {
         if(supply != null) {
             deleteSupplyButton.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/deleteSupply.fxml"));
+            loader.setLocation(getClass().getClassLoader().getResource("view/deleteSupply.fxml"));
 
             try {
                 loader.load();
@@ -474,7 +474,7 @@ public class AdminMenuController {
         Stage primaryStage = (Stage)logOfButton.getScene().getWindow();
         primaryStage.close();
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/userAuthentication.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource("view/userAuthentication.fxml"));
 
         try {
             loader.load();
@@ -548,7 +548,7 @@ public class AdminMenuController {
     void searchProductButtonAction(ActionEvent event){
         Stage st = (Stage) searchProductButton.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/searchProduct.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource("view/searchProduct.fxml"));
 
         try {
             loader.load();
