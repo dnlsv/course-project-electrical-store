@@ -99,7 +99,7 @@ public class AddOrderController {
 
     @FXML
     void addOrderButtonAction(ActionEvent event) {
-        if(orderClientNameField.getText().equals("")
+        if (orderClientNameField.getText().equals("")
                 || String.valueOf(Date.valueOf(orderDateField.getValue())).equals("")
                 || orderUserNameChoiceBox.getValue().equals("") || orderCostField.getText().equals("")
                 || orderCostField.getText().equals("0"))
@@ -197,7 +197,7 @@ public class AddOrderController {
 
     }
 
-    private void productListTableView(){
+    private void productListTableView() {
         productListProductIDColumn.setCellValueFactory(new PropertyValueFactory<>("productListProductID"));
         productListOrderIDColumn.setCellValueFactory(new PropertyValueFactory<>("productListOrderID"));
         productListQuantityColumn.setCellValueFactory(new PropertyValueFactory<>("productListQuantity"));
@@ -206,7 +206,7 @@ public class AddOrderController {
 
     @FXML
     void productTableAction(javafx.scene.input.MouseEvent event) {
-        product =  productTable.getSelectionModel().selectedItemProperty().get();
+        product = productTable.getSelectionModel().selectedItemProperty().get();
     }
 
     @FXML
@@ -220,7 +220,7 @@ public class AddOrderController {
         productTableView();
     }
 
-    public void productTableView(){
+    public void productTableView() {
         productIDColumn.setCellValueFactory(new PropertyValueFactory<>("productID"));
         productNameColumn.setCellValueFactory(new PropertyValueFactory<>("productName"));
         productProducerColumn.setCellValueFactory(new PropertyValueFactory<>("productProducer"));
@@ -231,14 +231,14 @@ public class AddOrderController {
         productTable.setItems(FXCollections.observableArrayList(clientWork.getProductArrayList()));
     }
 
-    private void setUserNameChoiceBox(){
+    private void setUserNameChoiceBox() {
         ArrayList<String> userNameList = clientWork.getUserNameList();
         ObservableList<String> list = FXCollections.observableArrayList();
         list.addAll(userNameList);
         orderUserNameChoiceBox.getItems().addAll(list);
     }
 
-    public void setNextOrderID(int productListOrderID){
+    public void setNextOrderID(int productListOrderID) {
         this.productListOrderID = productListOrderID;
     }
 }

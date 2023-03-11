@@ -16,7 +16,7 @@ public class ProductTable {
     private ResultSet resultSet;
     private String query;
 
-    public ProductTable(Connection connection){
+    public ProductTable(Connection connection) {
         this.connection = connection;
         try {
             statement = connection.createStatement();
@@ -25,13 +25,13 @@ public class ProductTable {
         }
     }
 
-    public ArrayList<Product> getProductTable(){
+    public ArrayList<Product> getProductTable() {
         query = "SELECT * FROM store.product;";
         arrayList = new ArrayList<Product>();
         try {
             resultSet = statement.executeQuery(query);
 
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 Product product = new Product(resultSet.getInt(1), resultSet.getString(2),
                         resultSet.getString(3), resultSet.getString(4),
                         resultSet.getInt(5), resultSet.getDate(6),
@@ -45,12 +45,12 @@ public class ProductTable {
         return arrayList;
     }
 
-    public void AddToProductTable(Product product){
+    public void AddToProductTable(Product product) {
         query = "insert into product " +
                 "(productName, productProducer, productCharacteristics, productQuantity, productDate, productPrice)" +
                 "values ('" + product.getProductName() + "', '" + product.getProductProducer() + "', '" +
                 product.getProductCharacteristic() + "', " + product.getProductQuantity() + ", '" +
-                product.getProductDate() + "'," + product.getProductPrice() +");";
+                product.getProductDate() + "'," + product.getProductPrice() + ");";
 
         try {
             statement.execute(query);
@@ -59,17 +59,17 @@ public class ProductTable {
         }
     }
 
-    public ArrayList<Product> searchFromProductTable(Product product){
+    public ArrayList<Product> searchFromProductTable(Product product) {
         String quantity, date, price;
-        if(product.getProductQuantity() == 0)
+        if (product.getProductQuantity() == 0)
             quantity = "";
         else
             quantity = Integer.toString(product.getProductQuantity());
-        if(product.getProductDate() == null)
+        if (product.getProductDate() == null)
             date = "";
         else
             date = String.valueOf(product.getProductDate());
-        if(product.getProductPrice() == 0)
+        if (product.getProductPrice() == 0)
             price = "";
         else
             price = Integer.toString(product.getProductPrice());
@@ -84,7 +84,7 @@ public class ProductTable {
         try {
             resultSet = statement.executeQuery(query);
 
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 Product foundProduct = new Product(resultSet.getInt(1), resultSet.getString(2),
                         resultSet.getString(3), resultSet.getString(4),
                         resultSet.getInt(5), resultSet.getDate(6),
@@ -98,7 +98,7 @@ public class ProductTable {
         return arrayList;
     }
 
-    public void DeleteFromProductTable(int id){
+    public void DeleteFromProductTable(int id) {
         query = "delete from product where productID = " + id + ";";
         try {
             statement.execute(query);
@@ -107,14 +107,14 @@ public class ProductTable {
         }
     }
 
-    public void EditFromProductTable(Product product){
+    public void EditFromProductTable(Product product) {
         query = "update product set productName = '" + product.getProductName() +
                 "', productProducer = '" + product.getProductProducer() +
                 "', productCharacteristics = '" + product.getProductCharacteristic() +
                 "', productQuantity = " + product.getProductQuantity() +
-                ", productDate = '"+ product.getProductDate() +
+                ", productDate = '" + product.getProductDate() +
                 "', productPrice = " + product.getProductPrice() +
-                " where productID = " +  product.getProductID() +";";
+                " where productID = " + product.getProductID() + ";";
 
         try {
             statement.execute(query);
@@ -137,7 +137,7 @@ public class ProductTable {
         return productPrice;
     }*/
 
-    public Product getProductByProductID(int id){
+    public Product getProductByProductID(int id) {
         query = "SELECT * FROM product where productId = " + id + ";";
         Product product = null;
         try {
@@ -154,11 +154,11 @@ public class ProductTable {
         return product;
     }
 
-    public ArrayList<Integer> getProductIDList(){
+    public ArrayList<Integer> getProductIDList() {
         ArrayList<Integer> productIDList = new ArrayList<Integer>();
         ArrayList<Product> arrayList = getProductTable();
 
-        for(int i = 0; i < arrayList.size(); i++){
+        for (int i = 0; i < arrayList.size(); i++) {
             productIDList.add(arrayList.get(i).getProductID());
         }
 

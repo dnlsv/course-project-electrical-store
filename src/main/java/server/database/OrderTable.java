@@ -16,7 +16,7 @@ public class OrderTable {
     private ResultSet resultSet;
     private String query;
 
-    public OrderTable(Connection connection){
+    public OrderTable(Connection connection) {
         this.connection = connection;
         try {
             statement = connection.createStatement();
@@ -25,14 +25,14 @@ public class OrderTable {
         }
     }
 
-    public ArrayList<Order> getOrderTable(){
+    public ArrayList<Order> getOrderTable() {
         query = "SELECT * FROM clientorder;";
         arrayList = new ArrayList<Order>();
 
         try {
             resultSet = statement.executeQuery(query);
 
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 Order order = new Order(resultSet.getInt(1), resultSet.getString(2),
                         resultSet.getDate(3), resultSet.getString(4), resultSet.getInt(5));
                 arrayList.add(order);
@@ -45,10 +45,10 @@ public class OrderTable {
         return arrayList;
     }
 
-    public void AddToOrderTable(Order order){
+    public void AddToOrderTable(Order order) {
         query = "insert into clientorder " +
                 "(orderClientName, orderDate, orderUserName, orderCost)" +
-                "values ('" + order.getOrderClientName() + "', '"  +
+                "values ('" + order.getOrderClientName() + "', '" +
                 order.getOrderDate() + "', '" + order.getOrderUserName() + "', " +
                 order.getOrderCost() + ");";
 
@@ -59,7 +59,7 @@ public class OrderTable {
         }
     }
 
-    public void DeleteFromOrderTable(int id){
+    public void DeleteFromOrderTable(int id) {
         query = "delete from clientorder where orderID = " + id + ";";
         try {
             statement.execute(query);
@@ -68,12 +68,12 @@ public class OrderTable {
         }
     }
 
-    public void EditFromOrderTable(Order order){
+    public void EditFromOrderTable(Order order) {
         query = "update clientorder set orderClientName = '" + order.getOrderClientName() +
                 "', orderDate = '" + order.getOrderDate() +
                 "', orderUserName = '" + order.getOrderUserName() +
-                "', orderCost = "+ order.getOrderCost() +
-                " where orderID = " +  order.getOrderID() +";";
+                "', orderCost = " + order.getOrderCost() +
+                " where orderID = " + order.getOrderID() + ";";
 
         try {
             statement.execute(query);
@@ -82,14 +82,14 @@ public class OrderTable {
         }
     }
 
-    public int getNumberOfOrders(){
+    public int getNumberOfOrders() {
         int number = 0;
         query = "SELECT * FROM clientorder;";
 
         try {
             resultSet = statement.executeQuery(query);
 
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 number++;
             }
 

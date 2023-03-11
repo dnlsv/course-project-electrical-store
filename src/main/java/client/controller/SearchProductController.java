@@ -114,7 +114,7 @@ public class SearchProductController {
             price = Integer.parseInt(productPriceField.getText());
         Product _product = new Product(0, name, producer, characteristics, quantity, date, price);
         arrayList = clientWork.searchFromProductTable(_product);
-        if(arrayList.size() == 0)
+        if (arrayList.size() == 0)
             clientWork.dialogWindow("Ничего не найдено!", "Information");
         else
             productTableView();
@@ -138,12 +138,11 @@ public class SearchProductController {
 
     @FXML
     void returnButtonAction(ActionEvent event) {
-        if(product != null) {
+        if (product != null) {
             AdminMenuController.productSt = product;
             Stage stage = (Stage) returnButton.getScene().getWindow();
             stage.close();
-        }
-        else {
+        } else {
             Stage stage = (Stage) returnButton.getScene().getWindow();
             stage.close();
         }
@@ -159,7 +158,7 @@ public class SearchProductController {
         productTableView();
     }
 
-    private void productTableView(){
+    private void productTableView() {
         productIDColumn.setCellValueFactory(new PropertyValueFactory<>("productID"));
         productNameColumn.setCellValueFactory(new PropertyValueFactory<>("productName"));
         productProducerColumn.setCellValueFactory(new PropertyValueFactory<>("productProducer"));

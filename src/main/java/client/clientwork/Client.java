@@ -11,7 +11,7 @@ public class Client {
     public static ObjectOutputStream outputStream;
     public static ObjectInputStream inputStream;
 
-    public static void startClient(){
+    public static void startClient() {
         try {
             socket = new Socket("127.0.01", 2524);
             outputStream = new ObjectOutputStream(socket.getOutputStream());

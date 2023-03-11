@@ -13,16 +13,21 @@ public class Supply implements Serializable {
     private int supplyCost;
 
     public Supply(int supplyID, int supplyProductID, int supplyQuantity, Date supplyDate,
-                  String supplyUserName, int supplyCost){
+                  String supplyUserName, int supplyCost) {
         this.supplyID = supplyID;
         this.supplyProductID = supplyProductID;
         this.supplyQuantity = supplyQuantity;
         this.supplyDate = supplyDate;
         this.supplyUserName = supplyUserName;
         this.supplyCost = supplyCost;
-    };
+    }
 
-    public Supply(){};
+    ;
+
+    public Supply() {
+    }
+
+    ;
 
     public int getSupplyID() {
         return supplyID;

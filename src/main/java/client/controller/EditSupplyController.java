@@ -93,7 +93,7 @@ public class EditSupplyController {
         setProductIDChoiceBox();
     }
 
-    public void setSupply(Supply supply){
+    public void setSupply(Supply supply) {
         this.supply = supply;
         supplyProductIDChoiceBox.setValue(supply.getSupplyProductID());
         supplyQuantityField.setText(Integer.toString(supply.getSupplyQuantity()));
@@ -102,14 +102,14 @@ public class EditSupplyController {
         supplyCostField.setText(Integer.toString(supply.getSupplyCost()));
     }
 
-    private void setUserNameChoiceBox(){
+    private void setUserNameChoiceBox() {
         ArrayList<String> userNameList = clientWork.getUserNameList();
         ObservableList<String> list = FXCollections.observableArrayList();
         list.addAll(userNameList);
         supplyUserNameChoiceBox.getItems().addAll(list);
     }
 
-    private void setProductIDChoiceBox(){
+    private void setProductIDChoiceBox() {
         ArrayList<Integer> productIDList = clientWork.getProductIDList();
         ObservableList<Integer> list = FXCollections.observableArrayList();
         list.addAll(productIDList);

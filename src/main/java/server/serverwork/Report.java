@@ -15,14 +15,14 @@ public class Report {
     private ProductListTable productListTable;
     private ProductTable productTable;
 
-    public Report(){
+    public Report() {
         databaseConnection = new DatabaseConnection();
         productListTable = new ProductListTable(databaseConnection.getDatabaseConnection());
         productTable = new ProductTable(databaseConnection.getDatabaseConnection());
     }
 
-    public void generateOrderReport(Order order){
-        String fileName ="D:/orderReport.txt";
+    public void generateOrderReport(Order order) {
+        String fileName = "D:/orderReport.txt";
 
         ArrayList<ProductList> arrayList = productListTable.getProductListTableByOrderID(order.getOrderID());
 
@@ -32,7 +32,7 @@ public class Report {
 
         String str = "";
 
-        for(int i = 0; i < arrayList.size(); i++){
+        for (int i = 0; i < arrayList.size(); i++) {
             str = str + "\n" + productTable.getProductByProductID(arrayList.get(i).getProductListProductID()).getProductName() +
                     " " + arrayList.get(i).getProductListQuantity();
         }
@@ -43,8 +43,8 @@ public class Report {
     }
 
 
-    public void generateSupplyReport(Supply supply){
-        String fileName ="D:/supplyReport.txt";
+    public void generateSupplyReport(Supply supply) {
+        String fileName = "D:/supplyReport.txt";
 
         String report = "Отчет о поставке № " + supply.getSupplyID() + "\nКод товара: " + supply.getSupplyProductID() +
                 "\nКоличество товаров: " + supply.getSupplyQuantity() + "\nДата поступления: " + supply.getSupplyDate() +
@@ -53,16 +53,15 @@ public class Report {
         writeToFile(report, fileName);
     }
 
-    public void writeToFile(String str, String outputFileName){
+    public void writeToFile(String str, String outputFileName) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFileName))) {
             writer.write(str);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public String readFromFile(String inputFileName){
+    public String readFromFile(String inputFileName) {
         String str = "";
 
         try (BufferedReader reader = new BufferedReader(new FileReader(inputFileName))) {
@@ -70,8 +69,7 @@ public class Report {
             while ((line = reader.readLine()) != null) {
                 str = str + "\n" + line;
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return str;

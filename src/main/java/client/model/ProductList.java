@@ -8,9 +8,10 @@ public class ProductList implements Serializable {
     private int productListOrderID;
     private int productListQuantity;
 
-    public ProductList(){}
+    public ProductList() {
+    }
 
-    public ProductList(int productListProductID, int productListOrderID, int productListQuantity){
+    public ProductList(int productListProductID, int productListOrderID, int productListQuantity) {
         this.productListProductID = productListProductID;
         this.productListOrderID = productListOrderID;
         this.productListQuantity = productListQuantity;

@@ -4,7 +4,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controller.AdminMenuController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="500.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/11.0.1" fx:controller="client.controller.AdminMenuController">
     <children>
         <TabPane layoutX="1.0" layoutY="54.0" prefHeight="446.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
@@ -12,19 +13,35 @@
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                             <children>
-                                <Button fx:id="addProductButton" layoutX="19.0" layoutY="30.0" mnemonicParsing="false" onAction="#addProductButtonAction" prefHeight="25.0" prefWidth="100.0" text="Добавить" AnchorPane.leftAnchor="25.0" />
-                                <Button fx:id="editProductButton" layoutX="163.0" layoutY="30.0" mnemonicParsing="false" onAction="#editProductButtonAction" prefHeight="25.0" prefWidth="100.0" text="Редактировать" AnchorPane.leftAnchor="150.0" />
-                                <Button fx:id="deleteProductButton" layoutX="305.0" layoutY="30.0" mnemonicParsing="false" onAction="#deleteProductButtonAction" prefHeight="25.0" prefWidth="100.0" text="Удалить" AnchorPane.leftAnchor="275.0" />
-                                <Button fx:id="searchProductButton" layoutX="669.0" layoutY="30.0" mnemonicParsing="false" onAction="#searchProductButtonAction" prefHeight="25.0" prefWidth="100.0" text="Поиск" AnchorPane.rightAnchor="25.0" />
-                                <TableView fx:id="productTable" layoutY="89.0" onMouseClicked="#productTableAction" prefHeight="320.0" prefWidth="800.0">
+                                <Button fx:id="addProductButton" layoutX="19.0" layoutY="30.0" mnemonicParsing="false"
+                                        onAction="#addProductButtonAction" prefHeight="25.0" prefWidth="100.0"
+                                        text="Добавить" AnchorPane.leftAnchor="25.0"/>
+                                <Button fx:id="editProductButton" layoutX="163.0" layoutY="30.0" mnemonicParsing="false"
+                                        onAction="#editProductButtonAction" prefHeight="25.0" prefWidth="100.0"
+                                        text="Редактировать" AnchorPane.leftAnchor="150.0"/>
+                                <Button fx:id="deleteProductButton" layoutX="305.0" layoutY="30.0"
+                                        mnemonicParsing="false" onAction="#deleteProductButtonAction" prefHeight="25.0"
+                                        prefWidth="100.0" text="Удалить" AnchorPane.leftAnchor="275.0"/>
+                                <Button fx:id="searchProductButton" layoutX="669.0" layoutY="30.0"
+                                        mnemonicParsing="false" onAction="#searchProductButtonAction" prefHeight="25.0"
+                                        prefWidth="100.0" text="Поиск" AnchorPane.rightAnchor="25.0"/>
+                                <TableView fx:id="productTable" layoutY="89.0" onMouseClicked="#productTableAction"
+                                           prefHeight="320.0" prefWidth="800.0">
                                     <columns>
-                                        <TableColumn fx:id="productIDColumn" prefWidth="79.99999845027924" text="Код товара" />
-                                        <TableColumn fx:id="productNameColumn" prefWidth="134.40001678466797" text="Название" />
-                                        <TableColumn fx:id="productProducerColumn" prefWidth="145.80001831054688" text="Производитель" />
-                                        <TableColumn fx:id="productCharacteristicColumn" prefWidth="145.0" text="Характеристики" />
-                                        <TableColumn fx:id="productQuantityColumn" prefWidth="95.19998168945312" text="Количество" />
-                                        <TableColumn fx:id="productDateColumn" prefWidth="116.20001220703125" text="Дата выпуска" />
-                                        <TableColumn fx:id="productPriceColumn" prefWidth="84.20001220703125" text="Цена" />
+                                        <TableColumn fx:id="productIDColumn" prefWidth="79.99999845027924"
+                                                     text="Код товара"/>
+                                        <TableColumn fx:id="productNameColumn" prefWidth="134.40001678466797"
+                                                     text="Название"/>
+                                        <TableColumn fx:id="productProducerColumn" prefWidth="145.80001831054688"
+                                                     text="Производитель"/>
+                                        <TableColumn fx:id="productCharacteristicColumn" prefWidth="145.0"
+                                                     text="Характеристики"/>
+                                        <TableColumn fx:id="productQuantityColumn" prefWidth="95.19998168945312"
+                                                     text="Количество"/>
+                                        <TableColumn fx:id="productDateColumn" prefWidth="116.20001220703125"
+                                                     text="Дата выпуска"/>
+                                        <TableColumn fx:id="productPriceColumn" prefWidth="84.20001220703125"
+                                                     text="Цена"/>
                                     </columns>
                                 </TableView>
                             </children>
@@ -35,18 +52,33 @@
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                             <children>
-                                <Button fx:id="addOrderButton" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" onAction="#addOrderButtonAction" prefHeight="25.0" prefWidth="100.0" text="Добавить" AnchorPane.leftAnchor="25.0" />
-                                <Button fx:id="editOrderButton" layoutX="150.0" layoutY="30.0" mnemonicParsing="false" onAction="#editOrderButtonAction" prefHeight="25.0" prefWidth="100.0" text="Редактировать" AnchorPane.leftAnchor="150.0" />
-                                <Button fx:id="deleteOrderButton" layoutX="249.0" layoutY="30.0" mnemonicParsing="false" onAction="#deleteOrderButtonAction" prefHeight="25.0" prefWidth="100.0" text="Удалить" AnchorPane.leftAnchor="275.0" />
-                                <Button fx:id="viewProductListButton" layoutX="424.0" layoutY="30.0" mnemonicParsing="false" onAction="#viewProductListButtonAction" text="Просмотреть список товаров" AnchorPane.rightAnchor="150.0" />
-                                <Button fx:id="orderReportButton" layoutX="666.0" layoutY="30.0" mnemonicParsing="false" onAction="#orderReportButtonAction" prefHeight="25.0" prefWidth="100.0" text="Отчет о заказе" AnchorPane.rightAnchor="25.0" />
-                                <TableView fx:id="orderTable" layoutY="89.0" onMouseClicked="#orderTableAction" prefHeight="320.0" prefWidth="800.0">
+                                <Button fx:id="addOrderButton" layoutX="14.0" layoutY="30.0" mnemonicParsing="false"
+                                        onAction="#addOrderButtonAction" prefHeight="25.0" prefWidth="100.0"
+                                        text="Добавить" AnchorPane.leftAnchor="25.0"/>
+                                <Button fx:id="editOrderButton" layoutX="150.0" layoutY="30.0" mnemonicParsing="false"
+                                        onAction="#editOrderButtonAction" prefHeight="25.0" prefWidth="100.0"
+                                        text="Редактировать" AnchorPane.leftAnchor="150.0"/>
+                                <Button fx:id="deleteOrderButton" layoutX="249.0" layoutY="30.0" mnemonicParsing="false"
+                                        onAction="#deleteOrderButtonAction" prefHeight="25.0" prefWidth="100.0"
+                                        text="Удалить" AnchorPane.leftAnchor="275.0"/>
+                                <Button fx:id="viewProductListButton" layoutX="424.0" layoutY="30.0"
+                                        mnemonicParsing="false" onAction="#viewProductListButtonAction"
+                                        text="Просмотреть список товаров" AnchorPane.rightAnchor="150.0"/>
+                                <Button fx:id="orderReportButton" layoutX="666.0" layoutY="30.0" mnemonicParsing="false"
+                                        onAction="#orderReportButtonAction" prefHeight="25.0" prefWidth="100.0"
+                                        text="Отчет о заказе" AnchorPane.rightAnchor="25.0"/>
+                                <TableView fx:id="orderTable" layoutY="89.0" onMouseClicked="#orderTableAction"
+                                           prefHeight="320.0" prefWidth="800.0">
                                     <columns>
-                                        <TableColumn fx:id="orderIDColumn" prefWidth="121.40000760555267" text="Номер заказа" />
-                                        <TableColumn fx:id="orderClientNameColumn" prefWidth="215.5999984741211" text="ФИО клиента" />
-                                        <TableColumn fx:id="orderDateColumn" prefWidth="139.60003662109375" text="Дата заказа" />
-                                        <TableColumn fx:id="orderUserNameColumn" minWidth="9.0" prefWidth="187.79995727539062" text="ФИО сотрудника" />
-                                        <TableColumn fx:id="orderCostColumn" prefWidth="137.0" text="Стоимость" />
+                                        <TableColumn fx:id="orderIDColumn" prefWidth="121.40000760555267"
+                                                     text="Номер заказа"/>
+                                        <TableColumn fx:id="orderClientNameColumn" prefWidth="215.5999984741211"
+                                                     text="ФИО клиента"/>
+                                        <TableColumn fx:id="orderDateColumn" prefWidth="139.60003662109375"
+                                                     text="Дата заказа"/>
+                                        <TableColumn fx:id="orderUserNameColumn" minWidth="9.0"
+                                                     prefWidth="187.79995727539062" text="ФИО сотрудника"/>
+                                        <TableColumn fx:id="orderCostColumn" prefWidth="137.0" text="Стоимость"/>
                                     </columns>
                                 </TableView>
                             </children>
@@ -57,18 +89,33 @@
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="301.0" prefWidth="600.0">
                             <children>
-                                <Button fx:id="addSupplyButton" layoutX="168.0" layoutY="30.0" mnemonicParsing="false" onAction="#addSupplyButtonAction" prefHeight="25.0" prefWidth="100.0" text="Добавить" AnchorPane.leftAnchor="25.0" />
-                                <Button fx:id="editSupplyButton" layoutX="294.0" layoutY="30.0" mnemonicParsing="false" onAction="#editSupplyButtonAction" prefHeight="25.0" prefWidth="100.0" text="Редактировать" AnchorPane.leftAnchor="150.0" />
-                                <Button fx:id="deleteSupplyButton" layoutX="456.0" layoutY="30.0" mnemonicParsing="false" onAction="#deleteSupplyButtonAction" prefHeight="25.0" prefWidth="100.0" text="Удалить" AnchorPane.leftAnchor="275.0" />
-                                <Button fx:id="supplyReportButton" layoutX="659.0" layoutY="30.0" mnemonicParsing="false" onAction="#supplyReportButtonAction" prefHeight="25.0" prefWidth="120.0" text="Отчет о поставке" AnchorPane.rightAnchor="25.0" />
-                                <TableView fx:id="supplyTable" layoutY="89.0" onMouseClicked="#supplyTableAction" prefHeight="320.0" prefWidth="800.0">
+                                <Button fx:id="addSupplyButton" layoutX="168.0" layoutY="30.0" mnemonicParsing="false"
+                                        onAction="#addSupplyButtonAction" prefHeight="25.0" prefWidth="100.0"
+                                        text="Добавить" AnchorPane.leftAnchor="25.0"/>
+                                <Button fx:id="editSupplyButton" layoutX="294.0" layoutY="30.0" mnemonicParsing="false"
+                                        onAction="#editSupplyButtonAction" prefHeight="25.0" prefWidth="100.0"
+                                        text="Редактировать" AnchorPane.leftAnchor="150.0"/>
+                                <Button fx:id="deleteSupplyButton" layoutX="456.0" layoutY="30.0"
+                                        mnemonicParsing="false" onAction="#deleteSupplyButtonAction" prefHeight="25.0"
+                                        prefWidth="100.0" text="Удалить" AnchorPane.leftAnchor="275.0"/>
+                                <Button fx:id="supplyReportButton" layoutX="659.0" layoutY="30.0"
+                                        mnemonicParsing="false" onAction="#supplyReportButtonAction" prefHeight="25.0"
+                                        prefWidth="120.0" text="Отчет о поставке" AnchorPane.rightAnchor="25.0"/>
+                                <TableView fx:id="supplyTable" layoutY="89.0" onMouseClicked="#supplyTableAction"
+                                           prefHeight="320.0" prefWidth="800.0">
                                     <columns>
-                                        <TableColumn fx:id="supplyIDColumn" prefWidth="119.99999845027924" text="Номер поставки" />
-                                        <TableColumn fx:id="supplyProductIDColumn" prefWidth="91.20000457763672" text="Код товара" />
-                                        <TableColumn fx:id="supplyQuantityColumn" prefWidth="150.20001220703125" text="Количество товаров" />
-                                        <TableColumn fx:id="supplyDateColumn" prefWidth="129.19998168945312" text="Дата поступления" />
-                                        <TableColumn fx:id="supplyUserNameColumn" prefWidth="150.39993286132812" text="ФИО сотрудника" />
-                                        <TableColumn fx:id="supplyCostColumn" prefWidth="161.60003662109375" text="Стоимость закупки" />
+                                        <TableColumn fx:id="supplyIDColumn" prefWidth="119.99999845027924"
+                                                     text="Номер поставки"/>
+                                        <TableColumn fx:id="supplyProductIDColumn" prefWidth="91.20000457763672"
+                                                     text="Код товара"/>
+                                        <TableColumn fx:id="supplyQuantityColumn" prefWidth="150.20001220703125"
+                                                     text="Количество товаров"/>
+                                        <TableColumn fx:id="supplyDateColumn" prefWidth="129.19998168945312"
+                                                     text="Дата поступления"/>
+                                        <TableColumn fx:id="supplyUserNameColumn" prefWidth="150.39993286132812"
+                                                     text="ФИО сотрудника"/>
+                                        <TableColumn fx:id="supplyCostColumn" prefWidth="161.60003662109375"
+                                                     text="Стоимость закупки"/>
                                     </columns>
                                 </TableView>
                             </children>
@@ -79,24 +126,39 @@
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                             <children>
-                                <Label layoutX="39.0" layoutY="69.0" text="Количество оформленных заказов за сессию:" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="70.0" />
-                                <Label layoutX="39.0" layoutY="109.0" text="Количество проданных товаров за сессию:" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="110.0" />
-                                <Label layoutX="41.0" layoutY="193.0" text="Полученный доход за ссессию" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="190.0" />
-                                <Label layoutX="41.0" layoutY="151.0" text="Потрачено на поставки за сессию" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="150.0" />
-                                <TextField fx:id="completedOrdersField" editable="false" layoutX="322.0" layoutY="66.0" prefHeight="25.0" prefWidth="80.0" />
-                                <TextField fx:id="soldProductsField" editable="false" layoutX="322.0" layoutY="106.0" prefHeight="25.0" prefWidth="80.0" />
-                                <TextField fx:id="spentSuppliesField" editable="false" layoutX="322.0" layoutY="145.0" prefHeight="25.0" prefWidth="80.0" />
-                                <TextField fx:id="incomeField" editable="false" layoutX="322.0" layoutY="185.0" prefHeight="25.0" prefWidth="80.0" />
-                                <Button fx:id="pieChartProductButton" layoutX="41.0" layoutY="265.0" mnemonicParsing="false" onAction="#pieChartProductButtonAction" text="Данные о наиболее продаваемых товарах" AnchorPane.topAnchor="305.0" />
-                                <Button fx:id="pieChartUserButton" layoutX="40.0" layoutY="309.0" mnemonicParsing="false" onAction="#pieChartUserButtonAction" text="Данные о сотрудниках в зависимости от принесенной прибыли" AnchorPane.topAnchor="355.0" />
-                                <Label layoutX="293.0" layoutY="14.0" text="Данные о текущей сессии" AnchorPane.topAnchor="15.0">
+                                <Label layoutX="39.0" layoutY="69.0" text="Количество оформленных заказов за сессию:"
+                                       AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="70.0"/>
+                                <Label layoutX="39.0" layoutY="109.0" text="Количество проданных товаров за сессию:"
+                                       AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="110.0"/>
+                                <Label layoutX="41.0" layoutY="193.0" text="Полученный доход за ссессию"
+                                       AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="190.0"/>
+                                <Label layoutX="41.0" layoutY="151.0" text="Потрачено на поставки за сессию"
+                                       AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="150.0"/>
+                                <TextField fx:id="completedOrdersField" editable="false" layoutX="322.0" layoutY="66.0"
+                                           prefHeight="25.0" prefWidth="80.0"/>
+                                <TextField fx:id="soldProductsField" editable="false" layoutX="322.0" layoutY="106.0"
+                                           prefHeight="25.0" prefWidth="80.0"/>
+                                <TextField fx:id="spentSuppliesField" editable="false" layoutX="322.0" layoutY="145.0"
+                                           prefHeight="25.0" prefWidth="80.0"/>
+                                <TextField fx:id="incomeField" editable="false" layoutX="322.0" layoutY="185.0"
+                                           prefHeight="25.0" prefWidth="80.0"/>
+                                <Button fx:id="pieChartProductButton" layoutX="41.0" layoutY="265.0"
+                                        mnemonicParsing="false" onAction="#pieChartProductButtonAction"
+                                        text="Данные о наиболее продаваемых товарах" AnchorPane.topAnchor="305.0"/>
+                                <Button fx:id="pieChartUserButton" layoutX="40.0" layoutY="309.0"
+                                        mnemonicParsing="false" onAction="#pieChartUserButtonAction"
+                                        text="Данные о сотрудниках в зависимости от принесенной прибыли"
+                                        AnchorPane.topAnchor="355.0"/>
+                                <Label layoutX="293.0" layoutY="14.0" text="Данные о текущей сессии"
+                                       AnchorPane.topAnchor="15.0">
                                     <font>
-                                        <Font size="18.0" />
+                                        <Font size="18.0"/>
                                     </font>
                                 </Label>
-                                <Label layoutX="314.0" layoutY="208.0" text="Графические данные" AnchorPane.topAnchor="250.0">
+                                <Label layoutX="314.0" layoutY="208.0" text="Графические данные"
+                                       AnchorPane.topAnchor="250.0">
                                     <font>
-                                        <Font size="18.0" />
+                                        <Font size="18.0"/>
                                     </font>
                                 </Label>
                             </children>
@@ -105,14 +167,17 @@
                 </Tab>
             </tabs>
         </TabPane>
-        <AnchorPane layoutX="1.0" prefHeight="55.0" prefWidth="800.0" style="-fx-background-color: #2E3348;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <AnchorPane layoutX="1.0" prefHeight="55.0" prefWidth="800.0" style="-fx-background-color: #2E3348;"
+                    AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <children>
                 <Label layoutX="283.0" layoutY="12.0" text="Меню администратора" textFill="WHITE">
                     <font>
-                        <Font size="22.0" />
+                        <Font size="22.0"/>
                     </font>
                 </Label>
-                <Button fx:id="logOfButton" layoutX="713.0" layoutY="9.0" mnemonicParsing="false" onAction="#logOfButtonAction" prefHeight="25.0" prefWidth="65.0" text="Выйти" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
+                <Button fx:id="logOfButton" layoutX="713.0" layoutY="9.0" mnemonicParsing="false"
+                        onAction="#logOfButtonAction" prefHeight="25.0" prefWidth="65.0" text="Выйти"
+                        AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0"/>
             </children>
         </AnchorPane>
     </children>

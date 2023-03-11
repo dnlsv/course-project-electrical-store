@@ -8,10 +8,10 @@ import java.util.ArrayList;
 
 public class Statistics {
 
-    ClientWork clientWork = new ClientWork();
     public static int beginNumberOfOrders;
     public static int beginNumberOfProducts;
     public static int beginNumberOfSupplies;
+    ClientWork clientWork = new ClientWork();
     private int numOfCompletedOrders;
     private int numOfSoldProducts;
     private int numOfReceivedSupplies;
@@ -42,13 +42,13 @@ public class Statistics {
             return 0;
         else {
             ArrayList<Supply> arrayList = clientWork.getSupplyArrayList();
-            for(int i = arrayList.size() - numOfReceivedSupplies; i < arrayList.size(); i++)
+            for (int i = arrayList.size() - numOfReceivedSupplies; i < arrayList.size(); i++)
                 spentSupplies = spentSupplies + arrayList.get(i).getSupplyCost();
             return spentSupplies;
         }
     }
 
-    public int getIncome(){
+    public int getIncome() {
         ArrayList<Order> arrayList = clientWork.getOrderArrayList();
         int cost = 0;
         for (int i = arrayList.size() - numOfCompletedOrders; i < arrayList.size(); i++)

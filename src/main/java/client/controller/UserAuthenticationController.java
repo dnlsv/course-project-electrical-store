@@ -16,9 +16,8 @@ import javafx.stage.Stage;
 
 public class UserAuthenticationController {
 
-    private int roleID;
     ClientWork clientWork = new ClientWork();
-
+    private int roleID;
     @FXML
     private ResourceBundle resources;
 
@@ -39,12 +38,12 @@ public class UserAuthenticationController {
         String login = loginField.getText();
         String password = passwordField.getText();
         boolean flag = clientWork.accountVerification(login, password);
-        if(flag){
+        if (flag) {
             roleID = clientWork.getUserRoleID(login);
-            if(roleID == 2){
+            if (roleID == 2) {
                 clientWork.dialogWindow("Вы вошли в учетную запись сотрудника!", "Information");
 
-                Stage st = (Stage)authenticateButton.getScene().getWindow();
+                Stage st = (Stage) authenticateButton.getScene().getWindow();
                 st.close();
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getClassLoader().getResource("view/employeeMenu.fxml"));
@@ -61,10 +60,10 @@ public class UserAuthenticationController {
                 stage.setTitle("Меню сотрудника");
                 stage.showAndWait();
             }
-            if(roleID == 1){
+            if (roleID == 1) {
                 clientWork.dialogWindow("Вы вошли в учетную запись администратора!", "Information");
 
-                Stage st = (Stage)authenticateButton.getScene().getWindow();
+                Stage st = (Stage) authenticateButton.getScene().getWindow();
                 st.close();
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getClassLoader().getResource("view/adminMenu.fxml"));
@@ -81,8 +80,7 @@ public class UserAuthenticationController {
                 stage.setTitle("Меню администратора");
                 stage.showAndWait();
             }
-        }
-        else{
+        } else {
             clientWork.dialogWindow("Вы ввели неверный логин или пароль!", "Error");
             loginField.setText("");
             passwordField.setText("");
@@ -94,7 +92,7 @@ public class UserAuthenticationController {
         getStatisticalData();
     }
 
-    private void getStatisticalData(){
+    private void getStatisticalData() {
         Statistics.beginNumberOfOrders = clientWork.getNumberOfOrders();
         Statistics.beginNumberOfProducts = clientWork.getNumberOfProducts();
         Statistics.beginNumberOfSupplies = clientWork.getNumberOfSupplies();

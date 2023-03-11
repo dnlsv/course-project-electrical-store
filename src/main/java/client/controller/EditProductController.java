@@ -92,7 +92,7 @@ public class EditProductController {
 
     }
 
-    public void setProduct(Product product){
+    public void setProduct(Product product) {
         this.product = product;
         productNameField.setText(product.getProductName());
         productProducerField.setText(product.getProductProducer());

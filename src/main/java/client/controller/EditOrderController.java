@@ -102,7 +102,7 @@ public class EditOrderController {
 
     @FXML
     void editOrderButtonAction(ActionEvent event) {
-        if(orderClientNameField.getText().equals("")
+        if (orderClientNameField.getText().equals("")
                 || String.valueOf(Date.valueOf(orderDateField.getValue())).equals("")
                 || orderUserNameChoiceBox.getValue().equals("") || orderCostField.getText().equals("")
                 || orderCostField.getText().equals("0"))
@@ -125,11 +125,10 @@ public class EditOrderController {
 
     @FXML
     void returnButtonAction(ActionEvent event) {
-        if(beginArrayList.equals(arrayList)){
+        if (beginArrayList.equals(arrayList)) {
             Stage stage = (Stage) returnButton.getScene().getWindow();
             stage.close();
-        }
-        else {
+        } else {
             for (int i = beginArrayList.size(); i < arrayList.size(); i++) {
                 product = clientWork.getProductByProductID(arrayList.get(i).getProductListProductID());
                 product.setProductQuantity(product.getProductQuantity() + arrayList.get(i).getProductListQuantity());
@@ -206,7 +205,7 @@ public class EditOrderController {
 
     @FXML
     void productTableAction(javafx.scene.input.MouseEvent event) {
-        product =  productTable.getSelectionModel().selectedItemProperty().get();
+        product = productTable.getSelectionModel().selectedItemProperty().get();
     }
 
     @FXML
@@ -220,7 +219,7 @@ public class EditOrderController {
         productTableView();
     }
 
-    public void setOrder(Order order){
+    public void setOrder(Order order) {
         this.order = order;
 
         orderClientNameField.setText(order.getOrderClientName());
@@ -236,14 +235,14 @@ public class EditOrderController {
         productListTableView();
     }
 
-    private void productListTableView(){
+    private void productListTableView() {
         productListProductIDColumn.setCellValueFactory(new PropertyValueFactory<>("productListProductID"));
         productListOrderIDColumn.setCellValueFactory(new PropertyValueFactory<>("productListOrderID"));
         productListQuantityColumn.setCellValueFactory(new PropertyValueFactory<>("productListQuantity"));
         productListTable.setItems(FXCollections.observableArrayList(arrayList));
     }
 
-    private void productTableView(){
+    private void productTableView() {
         productIDColumn.setCellValueFactory(new PropertyValueFactory<>("productID"));
         productNameColumn.setCellValueFactory(new PropertyValueFactory<>("productName"));
         productProducerColumn.setCellValueFactory(new PropertyValueFactory<>("productProducer"));
@@ -254,7 +253,7 @@ public class EditOrderController {
         productTable.setItems(FXCollections.observableArrayList(clientWork.getProductArrayList()));
     }
 
-    private void setUserNameChoiceBox(){
+    private void setUserNameChoiceBox() {
         ArrayList<String> userNameList = clientWork.getUserNameList();
         ObservableList<String> list = FXCollections.observableArrayList();
         list.addAll(userNameList);

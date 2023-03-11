@@ -24,12 +24,11 @@ import server.model.Supply;
 
 public class AdminMenuController {
 
+    public static Product productSt;
+    ClientWork clientWork = new ClientWork();
     private Product product;
     private Supply supply;
     private Order order;
-    ClientWork clientWork = new ClientWork();
-    public static Product productSt;
-
     @FXML
     private ResourceBundle resources;
 
@@ -191,7 +190,7 @@ public class AdminMenuController {
 
     @FXML
     void editProductButtonAction(ActionEvent event) {
-        if(product != null) {
+        if (product != null) {
             editProductButton.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getClassLoader().getResource("view/editProduct.fxml"));
@@ -212,15 +211,14 @@ public class AdminMenuController {
             stage.setScene(new Scene(root));
             stage.setTitle("Редактирование товара");
             stage.showAndWait();
-        }
-        else {
+        } else {
             clientWork.dialogWindow("Выберите товар из таблицы для редактирования!", "Information");
         }
     }
 
     @FXML
     void deleteProductButtonAction(ActionEvent event) {
-        if(product != null) {
+        if (product != null) {
             deleteProductButton.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getClassLoader().getResource("view/deleteProduct.fxml"));
@@ -241,29 +239,26 @@ public class AdminMenuController {
             stage.setScene(new Scene(root));
             stage.setTitle("Удаление товара");
             stage.showAndWait();
-        }
-        else {
+        } else {
             clientWork.dialogWindow("Выберите товар из таблицы для удаления!", "Information");
         }
     }
 
     @FXML
     void orderReportButtonAction(ActionEvent event) {
-        if(order != null){
+        if (order != null) {
             clientWork.generateOrderReport(order);
             clientWork.dialogWindow("Отчет сформирован!", "Information");
-        }
-        else
+        } else
             clientWork.dialogWindow("Выберите заказ из таблицы для создания отчета о заказе!", "Information");
     }
 
     @FXML
     void supplyReportButtonAction(ActionEvent event) {
-        if(supply != null){
+        if (supply != null) {
             clientWork.generateSupplyReport(supply);
             clientWork.dialogWindow("Отчет сформирован!", "Information");
-        }
-        else
+        } else
             clientWork.dialogWindow("Выберите заказ из таблицы для создания отчета о заказе!", "Information");
     }
 
@@ -284,7 +279,7 @@ public class AdminMenuController {
 
     @FXML
     void viewProductListButtonAction(ActionEvent event) {
-        if(order != null) {
+        if (order != null) {
             viewProductListButton.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getClassLoader().getResource("view/viewProductList.fxml"));
@@ -303,14 +298,14 @@ public class AdminMenuController {
             stage.setScene(new Scene(root));
             stage.setTitle("Просмотр списка товаров");
             stage.showAndWait();
-        }else {
+        } else {
             clientWork.dialogWindow("Выберите заказ из таблицы для просмотра списка товаров!", "Information");
         }
     }
 
     @FXML
     void deleteOrderButtonAction(ActionEvent event) {
-        if(order != null) {
+        if (order != null) {
             deleteOrderButton.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getClassLoader().getResource("view/deleteOrder.fxml"));
@@ -331,15 +326,14 @@ public class AdminMenuController {
             stage.setScene(new Scene(root));
             stage.setTitle("Удаление заказа");
             stage.showAndWait();
-        }
-        else {
+        } else {
             clientWork.dialogWindow("Выберите заказ из таблицы для удаления!", "Information");
         }
     }
 
     @FXML
     void editOrderButtonAction(ActionEvent event) {
-        if(order != null) {
+        if (order != null) {
             editOrderButton.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getClassLoader().getResource("view/editOrder.fxml"));
@@ -360,8 +354,7 @@ public class AdminMenuController {
             stage.setScene(new Scene(root));
             stage.setTitle("Редактирование заказа");
             stage.showAndWait();
-        }
-        else {
+        } else {
             clientWork.dialogWindow("Выберите заказ из таблицы для редактирования!", "Information");
         }
     }
@@ -413,7 +406,7 @@ public class AdminMenuController {
 
     @FXML
     void editSupplyButtonAction(ActionEvent event) {
-        if(supply != null) {
+        if (supply != null) {
             editSupplyButton.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getClassLoader().getResource("view/editSupply.fxml"));
@@ -434,15 +427,14 @@ public class AdminMenuController {
             stage.setScene(new Scene(root));
             stage.setTitle("Редактирование поставки");
             stage.showAndWait();
-        }
-        else {
+        } else {
             clientWork.dialogWindow("Выберите поставку из таблицы для редактирования!", "Information");
         }
     }
 
     @FXML
     void deleteSupplyButtonAction(ActionEvent event) {
-        if(supply != null) {
+        if (supply != null) {
             deleteSupplyButton.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getClassLoader().getResource("view/deleteSupply.fxml"));
@@ -463,15 +455,14 @@ public class AdminMenuController {
             stage.setScene(new Scene(root));
             stage.setTitle("Удаление поставки");
             stage.showAndWait();
-        }
-        else {
+        } else {
             clientWork.dialogWindow("Выберите поставку из таблицы для удаления!", "Information");
         }
     }
 
     @FXML
     void logOfButtonAction(ActionEvent event) {
-        Stage primaryStage = (Stage)logOfButton.getScene().getWindow();
+        Stage primaryStage = (Stage) logOfButton.getScene().getWindow();
         primaryStage.close();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getClassLoader().getResource("view/userAuthentication.fxml"));
@@ -500,7 +491,7 @@ public class AdminMenuController {
         Iterator<Integer> iterator = set.iterator();
         Iterator<Integer> iterator2 = set.iterator();
 
-        while(iterator.hasNext()) {
+        while (iterator.hasNext()) {
             int quantity = clientWork.getTotalProductListQuantityByProductID(iterator.next());
             PieChart.Data slice = new PieChart.Data(clientWork.getProductByProductID(iterator2.next()).getProductName(), quantity);
             pieChart.getData().add(slice);
@@ -525,13 +516,13 @@ public class AdminMenuController {
         String name;
         int cost = 0;
 
-        for(int j = 0; j < userNameList.size(); j++) {
+        for (int j = 0; j < userNameList.size(); j++) {
             name = userNameList.get(j);
             for (int i = 0; i < arrayList.size(); i++) {
                 if (name.equals(arrayList.get(i).getOrderUserName()))
                     cost = cost + arrayList.get(i).getOrderCost();
             }
-            if(cost != 0) {
+            if (cost != 0) {
                 PieChart.Data slice = new PieChart.Data(name, cost);
                 pieChart.getData().add(slice);
             }
@@ -545,7 +536,7 @@ public class AdminMenuController {
     }
 
     @FXML
-    void searchProductButtonAction(ActionEvent event){
+    void searchProductButtonAction(ActionEvent event) {
         Stage st = (Stage) searchProductButton.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getClassLoader().getResource("view/searchProduct.fxml"));
@@ -574,7 +565,7 @@ public class AdminMenuController {
         resetValue();
     }
 
-    private void productTableView(){
+    private void productTableView() {
         productIDColumn.setCellValueFactory(new PropertyValueFactory<>("productID"));
         productNameColumn.setCellValueFactory(new PropertyValueFactory<>("productName"));
         productProducerColumn.setCellValueFactory(new PropertyValueFactory<>("productProducer"));
@@ -585,7 +576,7 @@ public class AdminMenuController {
         productTable.setItems(FXCollections.observableArrayList(clientWork.getProductArrayList()));
     }
 
-    private void orderTableView(){
+    private void orderTableView() {
         supplyIDColumn.setCellValueFactory(new PropertyValueFactory<>("supplyID"));
         supplyProductIDColumn.setCellValueFactory(new PropertyValueFactory<>("supplyProductID"));
         supplyQuantityColumn.setCellValueFactory(new PropertyValueFactory<>("supplyQuantity"));
@@ -595,7 +586,7 @@ public class AdminMenuController {
         supplyTable.setItems(FXCollections.observableArrayList(clientWork.getSupplyArrayList()));
     }
 
-    private void supplyTableView(){
+    private void supplyTableView() {
         orderIDColumn.setCellValueFactory(new PropertyValueFactory<>("orderID"));
         orderClientNameColumn.setCellValueFactory(new PropertyValueFactory<>("orderClientName"));
         orderDateColumn.setCellValueFactory(new PropertyValueFactory<>("orderDate"));
@@ -604,7 +595,7 @@ public class AdminMenuController {
         orderTable.setItems(FXCollections.observableArrayList(clientWork.getOrderArrayList()));
     }
 
-    private void setStatisticalData(){
+    private void setStatisticalData() {
         Statistics statistics = new Statistics();
         completedOrdersField.setText(Integer.toString(statistics.getNumOfCompletedOrders()));
         soldProductsField.setText(Integer.toString(statistics.getNumOfSoldProducts()));
@@ -612,12 +603,12 @@ public class AdminMenuController {
         spentSuppliesField.setText(Integer.toString(statistics.getSpentSupplies()));
     }
 
-    private void setProduct(){
-        if(productSt != null)
+    private void setProduct() {
+        if (productSt != null)
             product = productSt;
     }
 
-    private void resetValue(){
+    private void resetValue() {
         product = null;
     }
 

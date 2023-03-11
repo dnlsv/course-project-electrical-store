@@ -7,9 +7,10 @@ public class User {
     String userPassword;
     int userRoleID;
 
-    public User(){}
+    public User() {
+    }
 
-    public User(String userName, String userLogin, String userPassword, int userRoleID){
+    public User(String userName, String userLogin, String userPassword, int userRoleID) {
         this.userName = userName;
         this.userLogin = userLogin;
         this.userPassword = userPassword;

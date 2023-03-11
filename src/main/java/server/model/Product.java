@@ -14,7 +14,7 @@ public class Product implements Serializable {
     private int productPrice;
 
     public Product(int productID, String productName, String productProducer, String productCharacteristic,
-                   int productQuantity, Date productDate, int productPrice){
+                   int productQuantity, Date productDate, int productPrice) {
         this.productID = productID;
         this.productName = productName;
         this.productProducer = productProducer;
@@ -22,9 +22,14 @@ public class Product implements Serializable {
         this.productQuantity = productQuantity;
         this.productDate = productDate;
         this.productPrice = productPrice;
-    };
+    }
 
-    public Product(){};
+    ;
+
+    public Product() {
+    }
+
+    ;
 
     public int getProductID() {
         return productID;

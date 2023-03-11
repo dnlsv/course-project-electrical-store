@@ -6,24 +6,27 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="260.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controller.AddSupplyController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="260.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8"
+            fx:controller="client.controller.AddSupplyController">
     <children>
         <Label layoutX="194.0" layoutY="14.0" prefHeight="32.0" prefWidth="232.0" text="Добавление поставки">
             <font>
-                <Font size="22.0" />
+                <Font size="22.0"/>
             </font>
         </Label>
-        <Label layoutX="14.0" layoutY="71.0" text="Код товара" />
-        <Label layoutX="343.0" layoutY="71.0" text="Количество" />
-        <Label layoutX="14.0" layoutY="121.0" text="Дата поступления" />
-        <Label layoutX="343.0" layoutY="121.0" text="Имя сотрудника" />
-        <Label layoutX="16.0" layoutY="173.0" text="Стоимость" />
-        <ChoiceBox fx:id="supplyProductIDChoiceBox" layoutX="142.0" layoutY="69.0" prefWidth="150.0" />
-        <TextField fx:id="supplyQuantityField" layoutX="450.0" layoutY="69.0" />
-        <DatePicker fx:id="supplyDateField" layoutX="142.0" layoutY="116.0" prefHeight="31.0" prefWidth="149.0" />
-        <ChoiceBox fx:id="supplyUserNameChoiceBox" layoutX="450.0" layoutY="116.0" prefWidth="150.0" />
-        <TextField fx:id="supplyCostField" layoutX="142.0" layoutY="168.0" prefHeight="26.0" prefWidth="150.0" />
-        <Button fx:id="addSupplyButton" layoutX="286.0" layoutY="219.0" mnemonicParsing="false" onAction="#addSupplyButtonAction" text="Добавить" AnchorPane.bottomAnchor="15.400000000000006" />
-        <Button fx:id="returnButton" layoutX="14.0" layoutY="219.0" mnemonicParsing="false" onAction="#returnButtonAction" text="Назад" />
+        <Label layoutX="14.0" layoutY="71.0" text="Код товара"/>
+        <Label layoutX="343.0" layoutY="71.0" text="Количество"/>
+        <Label layoutX="14.0" layoutY="121.0" text="Дата поступления"/>
+        <Label layoutX="343.0" layoutY="121.0" text="Имя сотрудника"/>
+        <Label layoutX="16.0" layoutY="173.0" text="Стоимость"/>
+        <ChoiceBox fx:id="supplyProductIDChoiceBox" layoutX="142.0" layoutY="69.0" prefWidth="150.0"/>
+        <TextField fx:id="supplyQuantityField" layoutX="450.0" layoutY="69.0"/>
+        <DatePicker fx:id="supplyDateField" layoutX="142.0" layoutY="116.0" prefHeight="31.0" prefWidth="149.0"/>
+        <ChoiceBox fx:id="supplyUserNameChoiceBox" layoutX="450.0" layoutY="116.0" prefWidth="150.0"/>
+        <TextField fx:id="supplyCostField" layoutX="142.0" layoutY="168.0" prefHeight="26.0" prefWidth="150.0"/>
+        <Button fx:id="addSupplyButton" layoutX="286.0" layoutY="219.0" mnemonicParsing="false"
+                onAction="#addSupplyButtonAction" text="Добавить" AnchorPane.bottomAnchor="15.400000000000006"/>
+        <Button fx:id="returnButton" layoutX="14.0" layoutY="219.0" mnemonicParsing="false"
+                onAction="#returnButtonAction" text="Назад"/>
     </children>
 </AnchorPane>

@@ -17,10 +17,9 @@ import server.model.ProductList;
 
 public class ViewProductListController {
 
+    ClientWork clientWork = new ClientWork();
     private ProductList productList;
     private int productListOrderID;
-    ClientWork clientWork = new ClientWork();
-
     @FXML
     private ResourceBundle resources;
 
@@ -44,7 +43,7 @@ public class ViewProductListController {
 
     @FXML
     void productListTableAction(MouseEvent event) {
-        productList =  productListTable.getSelectionModel().selectedItemProperty().get();
+        productList = productListTable.getSelectionModel().selectedItemProperty().get();
     }
 
     @FXML
@@ -58,14 +57,14 @@ public class ViewProductListController {
         productListTableView();
     }
 
-    public void productListTableView(){
+    public void productListTableView() {
         productListOrderIDColumn.setCellValueFactory(new PropertyValueFactory<>("productListOrderID"));
         productListProductIDColumn.setCellValueFactory(new PropertyValueFactory<>("productListProductID"));
         productListQuantity.setCellValueFactory(new PropertyValueFactory<>("productListQuantity"));
         productListTable.setItems(FXCollections.observableArrayList(clientWork.getProductListArrayListByOrderID(productListOrderID)));
     }
 
-    public void setProductListOrderID(int productListOrderID){
+    public void setProductListOrderID(int productListOrderID) {
         this.productListOrderID = productListOrderID;
         productListTableView();
     }

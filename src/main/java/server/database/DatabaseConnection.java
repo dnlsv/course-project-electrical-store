@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DatabaseConnection{
+public class DatabaseConnection {
 
     private final String URL = "jdbc:mysql://localhost:3306/store?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     private final String USERNAME = "root";
@@ -12,7 +12,7 @@ public class DatabaseConnection{
 
     private Connection connection;
 
-    public DatabaseConnection(){
+    public DatabaseConnection() {
         try {
             DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
@@ -21,7 +21,7 @@ public class DatabaseConnection{
         }
     }
 
-    public Connection getDatabaseConnection(){
+    public Connection getDatabaseConnection() {
         return connection;
     }
 

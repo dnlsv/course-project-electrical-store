@@ -5,36 +5,42 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controller.SearchProductController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8"
+            fx:controller="client.controller.SearchProductController">
     <children>
         <Label layoutX="281.0" layoutY="14.0" prefHeight="32.0" prefWidth="139.0" text="Поиск товара">
             <font>
-                <Font size="22.0" />
+                <Font size="22.0"/>
             </font>
         </Label>
-        <Label layoutX="14.0" layoutY="71.0" text="Название продукта" AnchorPane.leftAnchor="15.0" />
-        <Label layoutX="386.0" layoutY="73.0" text="Производитель" />
-        <Label layoutX="14.0" layoutY="121.0" text="Характеристики" AnchorPane.leftAnchor="15.0" />
-        <Label layoutX="386.0" layoutY="121.0" text="Количество" />
-        <Label layoutX="14.0" layoutY="171.0" text="Дата выпуска" AnchorPane.leftAnchor="15.0" />
-        <Label layoutX="386.0" layoutY="174.0" text="Цена" />
-        <TextField fx:id="productNameField" layoutX="147.0" layoutY="69.0" />
-        <TextField fx:id="productProducerField" layoutX="460.0" layoutY="69.0" AnchorPane.rightAnchor="15.0" />
-        <TextField fx:id="productCharacteristicsField" layoutX="147.0" layoutY="119.0" />
-        <TextField fx:id="productQuantityField" layoutX="460.0" layoutY="119.0" AnchorPane.rightAnchor="15.0" />
-        <DatePicker fx:id="productDateField" layoutX="147.0" layoutY="166.0" prefHeight="31.0" prefWidth="149.0" />
-        <TextField fx:id="productPriceField" layoutX="460.0" layoutY="169.0" AnchorPane.rightAnchor="15.0" />
-        <Button fx:id="searchProductButton" layoutX="320.0" layoutY="219.0" mnemonicParsing="false" onAction="#searchProductButtonAction" text="Найти" AnchorPane.bottomAnchor="245.0" />
-        <Button fx:id="returnButton" layoutX="14.0" layoutY="219.0" mnemonicParsing="false" onAction="#returnButtonAction" text="Назад" AnchorPane.bottomAnchor="245.0" AnchorPane.leftAnchor="15.0" />
-        <TableView fx:id="productTable" layoutX="4.0" layoutY="271.0" onMouseClicked="#productTableAction" prefHeight="223.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <Label layoutX="14.0" layoutY="71.0" text="Название продукта" AnchorPane.leftAnchor="15.0"/>
+        <Label layoutX="386.0" layoutY="73.0" text="Производитель"/>
+        <Label layoutX="14.0" layoutY="121.0" text="Характеристики" AnchorPane.leftAnchor="15.0"/>
+        <Label layoutX="386.0" layoutY="121.0" text="Количество"/>
+        <Label layoutX="14.0" layoutY="171.0" text="Дата выпуска" AnchorPane.leftAnchor="15.0"/>
+        <Label layoutX="386.0" layoutY="174.0" text="Цена"/>
+        <TextField fx:id="productNameField" layoutX="147.0" layoutY="69.0"/>
+        <TextField fx:id="productProducerField" layoutX="460.0" layoutY="69.0" AnchorPane.rightAnchor="15.0"/>
+        <TextField fx:id="productCharacteristicsField" layoutX="147.0" layoutY="119.0"/>
+        <TextField fx:id="productQuantityField" layoutX="460.0" layoutY="119.0" AnchorPane.rightAnchor="15.0"/>
+        <DatePicker fx:id="productDateField" layoutX="147.0" layoutY="166.0" prefHeight="31.0" prefWidth="149.0"/>
+        <TextField fx:id="productPriceField" layoutX="460.0" layoutY="169.0" AnchorPane.rightAnchor="15.0"/>
+        <Button fx:id="searchProductButton" layoutX="320.0" layoutY="219.0" mnemonicParsing="false"
+                onAction="#searchProductButtonAction" text="Найти" AnchorPane.bottomAnchor="245.0"/>
+        <Button fx:id="returnButton" layoutX="14.0" layoutY="219.0" mnemonicParsing="false"
+                onAction="#returnButtonAction" text="Назад" AnchorPane.bottomAnchor="245.0"
+                AnchorPane.leftAnchor="15.0"/>
+        <TableView fx:id="productTable" layoutX="4.0" layoutY="271.0" onMouseClicked="#productTableAction"
+                   prefHeight="223.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                   AnchorPane.rightAnchor="0.0">
             <columns>
-                <TableColumn fx:id="productIDColumn" prefWidth="53.0" text="Код товара" />
-                <TableColumn fx:id="productNameColumn" prefWidth="96.0" text="Название" />
-                <TableColumn fx:id="productProducerColumn" prefWidth="123.0" text="Производитель" />
-                <TableColumn fx:id="productCharacteristicColumn" prefWidth="154.0" text="Характеристики" />
-                <TableColumn fx:id="productQuantityColumn" prefWidth="70.0" text="Количество" />
-                <TableColumn fx:id="productDateColumn" prefWidth="108.0" text="Дата выпуска" />
-                <TableColumn fx:id="productPriceColumn" prefWidth="95.0" text="Цена" />
+                <TableColumn fx:id="productIDColumn" prefWidth="53.0" text="Код товара"/>
+                <TableColumn fx:id="productNameColumn" prefWidth="96.0" text="Название"/>
+                <TableColumn fx:id="productProducerColumn" prefWidth="123.0" text="Производитель"/>
+                <TableColumn fx:id="productCharacteristicColumn" prefWidth="154.0" text="Характеристики"/>
+                <TableColumn fx:id="productQuantityColumn" prefWidth="70.0" text="Количество"/>
+                <TableColumn fx:id="productDateColumn" prefWidth="108.0" text="Дата выпуска"/>
+                <TableColumn fx:id="productPriceColumn" prefWidth="95.0" text="Цена"/>
             </columns>
         </TableView>
     </children>

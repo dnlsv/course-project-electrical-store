@@ -51,7 +51,7 @@ public class AddProductController {
 
     @FXML
     void addProductButtonAction(ActionEvent event) {
-        if(!productNameField.getText().equals("") && !productProducerField.getText().equals("") &&
+        if (!productNameField.getText().equals("") && !productProducerField.getText().equals("") &&
                 !productCharacteristicsField.getText().equals("") && !productQuantityField.getText().equals("") &&
                 !productDateField.getValue().equals("") && !productPriceField.getText().equals("")) {
             if (validation.validationInt(productQuantityField.getText()) == true &&
@@ -76,7 +76,7 @@ public class AddProductController {
                     clientWork.dialogWindow("Введены некорректные данные!", "Error");
             } else
                 clientWork.dialogWindow("Введены некорректные данные!", "Error");
-        }else
+        } else
             clientWork.dialogWindow("Заполните все поля!", "Information");
     }
 

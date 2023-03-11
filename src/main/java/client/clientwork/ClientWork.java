@@ -12,9 +12,10 @@ public class ClientWork {
 
     private String clientMessage;
 
-    public ClientWork(){}
+    public ClientWork() {
+    }
 
-    public ArrayList<Product> getProductArrayList(){
+    public ArrayList<Product> getProductArrayList() {
         clientMessage = "getProductTable";
         ArrayList<Product> productList = null;
 
@@ -23,14 +24,14 @@ public class ClientWork {
             productList = (ArrayList<Product>) Client.inputStream.readObject();
         } catch (IOException e) {
             e.printStackTrace();
-        }catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 
         return productList;
     }
 
-    public void addToProductTable(Product product){
+    public void addToProductTable(Product product) {
         clientMessage = "addToProductTable";
 
         try {
@@ -41,7 +42,7 @@ public class ClientWork {
         }
     }
 
-    public ArrayList<Product> searchFromProductTable(Product product){
+    public ArrayList<Product> searchFromProductTable(Product product) {
         clientMessage = "searchFromProductTable";
         ArrayList<Product> productList = null;
 
@@ -58,7 +59,7 @@ public class ClientWork {
         return productList;
     }
 
-    public void deleteFromProductTable(int productID){
+    public void deleteFromProductTable(int productID) {
         clientMessage = "deleteFromProductTable";
 
         try {
@@ -69,7 +70,7 @@ public class ClientWork {
         }
     }
 
-    public void editFromProductTable(Product product){
+    public void editFromProductTable(Product product) {
         clientMessage = "editFromProductTable";
 
         try {
@@ -80,7 +81,7 @@ public class ClientWork {
         }
     }
 
-    public ArrayList<Supply> getSupplyArrayList(){
+    public ArrayList<Supply> getSupplyArrayList() {
         clientMessage = "getSupplyTable";
         ArrayList<Supply> supplyList = null;
 
@@ -96,7 +97,7 @@ public class ClientWork {
         return supplyList;
     }
 
-    public void addToSupplyTable(Supply supply){
+    public void addToSupplyTable(Supply supply) {
         clientMessage = "addToSupplyTable";
 
         try {
@@ -107,7 +108,7 @@ public class ClientWork {
         }
     }
 
-    public void deleteFromSupplyTable(int supplyID){
+    public void deleteFromSupplyTable(int supplyID) {
         clientMessage = "deleteFromSupplyTable";
 
         try {
@@ -118,7 +119,7 @@ public class ClientWork {
         }
     }
 
-    public void editFromSupplyTable(Supply supply){
+    public void editFromSupplyTable(Supply supply) {
         clientMessage = "editFromSupplyTable";
 
         try {
@@ -129,7 +130,7 @@ public class ClientWork {
         }
     }
 
-    public ArrayList<Order> getOrderArrayList(){
+    public ArrayList<Order> getOrderArrayList() {
         clientMessage = "getOrderArrayList";
         ArrayList<Order> orderList = null;
 
@@ -145,7 +146,7 @@ public class ClientWork {
         return orderList;
     }
 
-    public void addToOrderTable(Order order){
+    public void addToOrderTable(Order order) {
         clientMessage = "addToOrderTable";
 
         try {
@@ -156,7 +157,7 @@ public class ClientWork {
         }
     }
 
-    public void deleteFromOrderTable(int orderID){
+    public void deleteFromOrderTable(int orderID) {
         clientMessage = "deleteFromOrderTable";
 
         try {
@@ -167,7 +168,7 @@ public class ClientWork {
         }
     }
 
-    public void editFromOrderTable(Order order){
+    public void editFromOrderTable(Order order) {
         clientMessage = "editFromOrderTable";
 
         try {
@@ -178,7 +179,7 @@ public class ClientWork {
         }
     }
 
-    public void addToProductListTable(ArrayList<ProductList> productListArrayList){
+    public void addToProductListTable(ArrayList<ProductList> productListArrayList) {
         clientMessage = "addToProductListTable";
 
         try {
@@ -189,7 +190,7 @@ public class ClientWork {
         }
     }
 
-    public void editFromProductListTable(ArrayList<ProductList> productListArrayList){
+    public void editFromProductListTable(ArrayList<ProductList> productListArrayList) {
         clientMessage = "editFromProductListTable";
 
         try {
@@ -200,7 +201,7 @@ public class ClientWork {
         }
     }
 
-    public int getNextOrderID(){
+    public int getNextOrderID() {
         clientMessage = "getNextOrderID";
         int orderID = 0;
 
@@ -249,7 +250,7 @@ public class ClientWork {
         return productListArrayList;
     }*/
 
-    public boolean accountVerification(String login, String password){
+    public boolean accountVerification(String login, String password) {
         clientMessage = "accountVerification";
         boolean flag = false;
 
@@ -267,7 +268,7 @@ public class ClientWork {
         return flag;
     }
 
-    public int getUserRoleID(String login){
+    public int getUserRoleID(String login) {
         clientMessage = "getUserRoleID";
         int roleID = 0;
 
@@ -299,7 +300,7 @@ public class ClientWork {
         return productPrice;
     }*/
 
-    public Product getProductByProductID(int productID){
+    public Product getProductByProductID(int productID) {
         clientMessage = "getProductByProductID";
         Product product = null;
 
@@ -309,14 +310,14 @@ public class ClientWork {
             product = (Product) Client.inputStream.readObject();
         } catch (IOException e) {
             e.printStackTrace();
-        }catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 
         return product;
     }
 
-    public int getNumberOfOrders(){
+    public int getNumberOfOrders() {
         int number = 0;
         clientMessage = "getNumberOfOrders";
 
@@ -325,14 +326,14 @@ public class ClientWork {
             number = (Integer) Client.inputStream.readObject();
         } catch (IOException e) {
             e.printStackTrace();
-        }catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 
         return number;
     }
 
-    public int getNumberOfProducts(){
+    public int getNumberOfProducts() {
         int number = 0;
         clientMessage = "getNumberOfProducts";
 
@@ -341,14 +342,14 @@ public class ClientWork {
             number = (Integer) Client.inputStream.readObject();
         } catch (IOException e) {
             e.printStackTrace();
-        }catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 
         return number;
     }
 
-    public int getNumberOfSupplies(){
+    public int getNumberOfSupplies() {
         int number = 0;
         clientMessage = "getNumberOfSupplies";
 
@@ -357,14 +358,14 @@ public class ClientWork {
             number = (Integer) Client.inputStream.readObject();
         } catch (IOException e) {
             e.printStackTrace();
-        }catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 
         return number;
     }
 
-    public void generateOrderReport(Order order){
+    public void generateOrderReport(Order order) {
         clientMessage = "generateOrderReport";
 
         try {
@@ -375,7 +376,7 @@ public class ClientWork {
         }
     }
 
-    public void generateSupplyReport(Supply supply){
+    public void generateSupplyReport(Supply supply) {
         clientMessage = "generateSupplyReport";
 
         try {
@@ -386,7 +387,7 @@ public class ClientWork {
         }
     }
 
-    public int getTotalProductListQuantityByProductID(int productID){
+    public int getTotalProductListQuantityByProductID(int productID) {
         clientMessage = "getTotalProductListQuantityByProductID";
         int quantity = 0;
 
@@ -396,14 +397,14 @@ public class ClientWork {
             quantity = (Integer) Client.inputStream.readObject();
         } catch (IOException e) {
             e.printStackTrace();
-        }catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 
         return quantity;
     }
 
-    public Set<Integer> getUniqueProductList(){
+    public Set<Integer> getUniqueProductList() {
         clientMessage = "getUniqueProductList";
         Set<Integer> set = null;
 
@@ -412,14 +413,14 @@ public class ClientWork {
             set = (Set<Integer>) Client.inputStream.readObject();
         } catch (IOException e) {
             e.printStackTrace();
-        }catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 
         return set;
     }
 
-    public ArrayList<String> getUserNameList(){
+    public ArrayList<String> getUserNameList() {
         clientMessage = "getUserNameList";
         ArrayList<String> arrayList = null;
 
@@ -428,14 +429,14 @@ public class ClientWork {
             arrayList = (ArrayList<String>) Client.inputStream.readObject();
         } catch (IOException e) {
             e.printStackTrace();
-        }catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 
         return arrayList;
     }
 
-    public ArrayList<Integer> getProductIDList(){
+    public ArrayList<Integer> getProductIDList() {
         clientMessage = "getProductIDList";
         ArrayList<Integer> arrayList = null;
 
@@ -444,14 +445,14 @@ public class ClientWork {
             arrayList = (ArrayList<Integer>) Client.inputStream.readObject();
         } catch (IOException e) {
             e.printStackTrace();
-        }catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 
         return arrayList;
     }
 
-    public void dialogWindow(String message, String title){
+    public void dialogWindow(String message, String title) {
         Alert alert = new Alert(Alert.AlertType.NONE, message, ButtonType.OK);
         alert.setTitle(title);
         alert.showAndWait();

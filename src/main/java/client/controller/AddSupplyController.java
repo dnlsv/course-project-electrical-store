@@ -92,14 +92,14 @@ public class AddSupplyController {
         setProductIDChoiceBox();
     }
 
-    private void setUserNameChoiceBox(){
+    private void setUserNameChoiceBox() {
         ArrayList<String> userNameList = clientWork.getUserNameList();
         ObservableList<String> list = FXCollections.observableArrayList();
         list.addAll(userNameList);
         supplyUserNameChoiceBox.getItems().addAll(list);
     }
 
-    private void setProductIDChoiceBox(){
+    private void setProductIDChoiceBox() {
         ArrayList<Integer> productIDList = clientWork.getProductIDList();
         ObservableList<Integer> list = FXCollections.observableArrayList();
         list.addAll(productIDList);

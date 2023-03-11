@@ -12,9 +12,8 @@ import server.model.Order;
 
 public class DeleteOrderController {
 
-    private Order order;
     ClientWork clientWork = new ClientWork();
-
+    private Order order;
     @FXML
     private ResourceBundle resources;
 

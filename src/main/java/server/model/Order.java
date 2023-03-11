@@ -11,15 +11,20 @@ public class Order implements Serializable {
     private String orderUserName;
     private int orderCost;
 
-    public Order(int orderID, String orderClientName, Date orderDate, String orderUserName, int orderCost){
+    public Order(int orderID, String orderClientName, Date orderDate, String orderUserName, int orderCost) {
         this.orderID = orderID;
         this.orderClientName = orderClientName;
         this.orderDate = orderDate;
         this.orderUserName = orderUserName;
         this.orderCost = orderCost;
-    };
+    }
 
-    public Order(){};
+    ;
+
+    public Order() {
+    }
+
+    ;
 
     public int getOrderID() {
         return orderID;

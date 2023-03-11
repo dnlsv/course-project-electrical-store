@@ -27,10 +27,9 @@ import server.model.Supply;
 
 public class EmployeeMenuController {
 
+    ClientWork clientWork = new ClientWork();
     private Supply supply;
     private Order order;
-    ClientWork clientWork = new ClientWork();
-
     @FXML
     private ResourceBundle resources;
 
@@ -148,7 +147,7 @@ public class EmployeeMenuController {
 
     @FXML
     void viewProductListButtonAction(ActionEvent event) {
-        if(order != null) {
+        if (order != null) {
             viewProductListButton.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getClassLoader().getResource("view/viewProductList.fxml"));
@@ -167,8 +166,7 @@ public class EmployeeMenuController {
             stage.setScene(new Scene(root));
             stage.setTitle("Просмотр списка товаров");
             stage.showAndWait();
-        }
-        else {
+        } else {
             clientWork.dialogWindow("Выберите заказ из таблицы для просмотра списка товаров!", "Information");
         }
     }
@@ -180,7 +178,7 @@ public class EmployeeMenuController {
 
     @FXML
     void logOfButtonAction(ActionEvent event) {
-        Stage st = (Stage)logOfButton.getScene().getWindow();
+        Stage st = (Stage) logOfButton.getScene().getWindow();
         st.close();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getClassLoader().getResource("view/userAuthentication.fxml"));
@@ -200,7 +198,7 @@ public class EmployeeMenuController {
 
     @FXML
     void deleteOrderButtonAction(ActionEvent event) {
-        if(order != null) {
+        if (order != null) {
             deleteOrderButton.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getClassLoader().getResource("view/deleteOrder.fxml"));
@@ -221,15 +219,14 @@ public class EmployeeMenuController {
             stage.setScene(new Scene(root));
             stage.setTitle("Удаление заказа");
             stage.showAndWait();
-        }
-        else {
+        } else {
             clientWork.dialogWindow("Выберите заказ из таблицы для удаления!", "Information");
         }
     }
 
     @FXML
     void editOrderButtonAction(ActionEvent event) {
-        if(order != null) {
+        if (order != null) {
             editOrderButton.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getClassLoader().getResource("view/editOrder.fxml"));
@@ -250,8 +247,7 @@ public class EmployeeMenuController {
             stage.setScene(new Scene(root));
             stage.setTitle("Редактирование заказа");
             stage.showAndWait();
-        }
-        else {
+        } else {
             clientWork.dialogWindow("Выберите заказ из таблицы для редактирования!", "Information");
         }
     }
@@ -292,13 +288,13 @@ public class EmployeeMenuController {
         String name;
         int cost = 0;
 
-        for(int j = 0; j < userNameList.size(); j++) {
+        for (int j = 0; j < userNameList.size(); j++) {
             name = userNameList.get(j);
             for (int i = 0; i < arrayList.size(); i++) {
                 if (name.equals(arrayList.get(i).getOrderUserName()))
                     cost = cost + arrayList.get(i).getOrderCost();
             }
-            if(cost != 0) {
+            if (cost != 0) {
                 PieChart.Data slice = new PieChart.Data(name, cost);
                 pieChart.getData().add(slice);
             }
@@ -321,7 +317,7 @@ public class EmployeeMenuController {
         Iterator<Integer> iterator = set.iterator();
         Iterator<Integer> iterator2 = set.iterator();
 
-        while(iterator.hasNext()) {
+        while (iterator.hasNext()) {
             int quantity = clientWork.getTotalProductListQuantityByProductID(iterator.next());
             PieChart.Data slice = new PieChart.Data(clientWork.getProductByProductID(iterator2.next()).getProductName(), quantity);
             pieChart.getData().add(slice);
@@ -335,7 +331,7 @@ public class EmployeeMenuController {
     }
 
     @FXML
-    void searchProductButtonAction(ActionEvent event){
+    void searchProductButtonAction(ActionEvent event) {
         Stage st = (Stage) searchProductButton.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getClassLoader().getResource("view/searchProduct.fxml"));
@@ -367,7 +363,7 @@ public class EmployeeMenuController {
         setStatisticalData();
     }
 
-    private void productTableView(){
+    private void productTableView() {
         productIDColumn.setCellValueFactory(new PropertyValueFactory<>("productID"));
         productNameColumn.setCellValueFactory(new PropertyValueFactory<>("productName"));
         productProducerColumn.setCellValueFactory(new PropertyValueFactory<>("productProducer"));
@@ -378,7 +374,7 @@ public class EmployeeMenuController {
         productTable.setItems(FXCollections.observableArrayList(clientWork.getProductArrayList()));
     }
 
-    private void orderTableView(){
+    private void orderTableView() {
         supplyIDColumn.setCellValueFactory(new PropertyValueFactory<>("supplyID"));
         supplyProductIDColumn.setCellValueFactory(new PropertyValueFactory<>("supplyProductID"));
         supplyQuantityColumn.setCellValueFactory(new PropertyValueFactory<>("supplyQuantity"));
@@ -388,7 +384,7 @@ public class EmployeeMenuController {
         supplyTable.setItems(FXCollections.observableArrayList(clientWork.getSupplyArrayList()));
     }
 
-    private void supplyTableView(){
+    private void supplyTableView() {
         orderIDColumn.setCellValueFactory(new PropertyValueFactory<>("orderID"));
         orderClientNameColumn.setCellValueFactory(new PropertyValueFactory<>("orderClientName"));
         orderDateColumn.setCellValueFactory(new PropertyValueFactory<>("orderDate"));
@@ -397,7 +393,7 @@ public class EmployeeMenuController {
         orderTable.setItems(FXCollections.observableArrayList(clientWork.getOrderArrayList()));
     }
 
-    private void setStatisticalData(){
+    private void setStatisticalData() {
         Statistics statistics = new Statistics();
         completedOrdersField.setText(Integer.toString(statistics.getNumOfCompletedOrders()));
         soldProductsField.setText(Integer.toString(statistics.getNumOfSoldProducts()));

@@ -11,7 +11,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Set;
 
-public class ServerThread extends Thread{
+public class ServerThread extends Thread {
 
     private ObjectOutputStream outputStream;
     private ObjectInputStream inputStream;
